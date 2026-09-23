@@ -40,3 +40,27 @@ class CSVString(str):
 
 class JSONString(str):
     """Special string class to indicate a JSON string."""
+
+
+from uuid import UUID
+
+
+def is_valid_uuid(val: Any) -> bool:
+    """Check if a given string or value is a valid UUID string.
+
+    Args:
+        val: The value to check for UUID validity.
+
+    Returns:
+        bool: True if val is a valid UUID string or UUID object, False otherwise.
+    """
+    if isinstance(val, UUID):
+        return True
+    if not isinstance(val, str):
+        return False
+    try:
+        UUID(val)
+        return True
+    except (ValueError, TypeError, AttributeError):
+        return False
+
