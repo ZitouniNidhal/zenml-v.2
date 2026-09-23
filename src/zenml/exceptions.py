@@ -36,7 +36,27 @@ class ZenMLBaseException(Exception):
         """
         if message and url:
             message += f" For more information, visit {url}."
+        self.message = message
+        self.url = url
         super().__init__(message)
+
+    @property
+    def formatted_message(self) -> str:
+        """Returns the formatted exception message.
+
+        Returns:
+            str: Clean exception message string.
+        """
+        return self.message or str(self)
+
+    def __str__(self) -> str:
+        """String representation of the exception.
+
+        Returns:
+            str: Exception string.
+        """
+        return super().__str__() or self.__class__.__name__
+
 
 
 class InitializationException(ZenMLBaseException):
