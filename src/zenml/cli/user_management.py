@@ -38,17 +38,23 @@ from zenml.models import UserFilter
 
 @cli.group(cls=TagGroup, tag=CliCategories.IDENTITY_AND_SECURITY)
 def user() -> None:
-    """Commands for user management."""
+    """Commands for managing ZenML users, authentication profiles, and permissions.
+
+    Use these commands to create, list, describe, update, or delete ZenML users
+    on your active ZenML server deployment.
+    """
 
 
 @user.command("describe")
 @click.argument("user_name_or_id", type=str, required=False)
 def describe_user(user_name_or_id: Optional[str] = None) -> None:
-    """Get the user.
+    """Get detailed information about a specific user or the currently active user.
 
     Args:
-        user_name_or_id: The name or ID of the user.
+        user_name_or_id: The name or unique ID of the user to describe. If omitted,
+            describes the currently authenticated user.
     """
+
     client = Client()
     if not user_name_or_id:
         active_user = client.active_user
