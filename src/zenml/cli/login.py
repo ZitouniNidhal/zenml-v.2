@@ -278,7 +278,11 @@ def connect_to_server(
                 f"access the server at '{url}'."
             )
         except CredentialsNotValid as e:
-            cli_utils.error(f"Authorization error: {e}")
+            cli_utils.error(
+                f"Authorization error: {e}\n"
+                "Please verify your credentials or try running 'zenml login --refresh' to re-authenticate."
+            )
+
         else:
             if project:
                 _set_active_project(project)
