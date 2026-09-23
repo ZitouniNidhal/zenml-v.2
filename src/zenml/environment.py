@@ -15,10 +15,11 @@
 
 import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 import distro
 
@@ -157,7 +158,29 @@ class Environment(metaclass=SingletonMetaClass):
         Returns:
             str: the python version
         """
-        return platform.python_version()
+        try:
+            return platform.python_version()
+        except Exception as e:
+            logger.warning("Failed to retrieve Python version: %s", e)
+            return "unknown"
+
+    @staticmethod
+    def python_version_tuple() -> Tuple[int, int, int]:
+        """Returns the Python version as a tuple of integers (major, minor, micro).
+
+        Returns:
+            Tuple[int, int, int]: The major, minor, and micro version numbers.
+        """
+        try:
+            version_str = platform.python_version()
+            parts = version_str.split(".")
+            major = int(parts[0]) if len(parts) > 0 else sys.version_info[0]
+            minor = int(parts[1]) if len(parts) > 1 else sys.version_info[1]
+            micro = int(re.sub(r"\D.*", "", parts[2])) if len(parts) > 2 else sys.version_info[2]
+            return (major, minor, micro)
+        except Exception:
+            return (sys.version_info[0], sys.version_info[1], sys.version_info[2])
+
 
     @staticmethod
     def in_container() -> bool:
