@@ -47,6 +47,28 @@ class StrEnum(str, Enum):
         """
         return [c.value for c in cls]
 
+    @classmethod
+    def has_value(cls, value: str) -> bool:
+        """Check if a given string value is present in the enum values.
+
+        Args:
+            value: String value to check.
+
+        Returns:
+            bool: True if value is present, False otherwise.
+        """
+        return value in cls.values()
+
+    @classmethod
+    def names_str(cls) -> str:
+        """Get a comma-separated string representation of enum values.
+
+        Returns:
+            str: Comma-separated list of enum values.
+        """
+        return ", ".join(cls.values())
+
+
 
 class ABCEnumMeta(ABCMeta, EnumMeta):
     """Metaclass combining ABCMeta and EnumType."""
