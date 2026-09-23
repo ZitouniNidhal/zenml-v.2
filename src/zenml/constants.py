@@ -26,6 +26,11 @@ T = TypeVar("T")
 # Default OTEL_SERVICE_NAME for non-Pro ZenML Workspace.
 DEFAULT_ZENML_SERVER_OTEL_SERVICE_NAME = "zenml-server"
 
+# Network & HTTP Request Defaults
+DEFAULT_HTTP_REQUEST_TIMEOUT: int = 30  # seconds
+DEFAULT_MAX_HTTP_RETRIES: int = 3
+
+
 
 def handle_json_env_var(
     var: str,
