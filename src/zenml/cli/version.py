@@ -75,8 +75,29 @@ ascii_arts = [
 ]
 
 
+import platform
+import sys
+
+from zenml import __version__
+from zenml.cli.cli import cli
+from zenml.cli.utils import declare
+from zenml.environment import Environment
+
+
 @cli.command()
-def version() -> None:
+@click.option(
+    "--details",
+    "-d",
+    is_flag=True,
+    default=False,
+    help="Display detailed environment info (Python version, OS, system platform).",
+)
+def version(details: bool = False) -> None:
     """Version of ZenML."""
     declare(random.choice(ascii_arts))
-    click.echo(click.style(f"version: {__version__}", bold=True))
+    click.echo(click.style(f"ZenML version: {__version__}", bold=True))
+    if details:
+        click.echo(f"Python version: {platform.python_version()}")
+        click.echo(f"OS platform: {platform.platform()}")
+        click.echo(f"System: {platform.system()} {platform.release()}")
+
