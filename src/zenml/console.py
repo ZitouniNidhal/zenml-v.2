@@ -24,9 +24,12 @@ zenml_style_defaults = {
     "title": Style(color="cyan", bold=True, underline=True),
     "error": Style(color="red"),
     "success": Style(color="green"),
+    "code": Style(color="cyan", italic=True),
+    "highlight": Style(color="magenta", bold=True),
     "repr.str": Style(color="white", dim=False),
     "repr.uuid": Style(color="magenta", dim=False),
 }
+
 
 zenml_custom_theme = Theme(zenml_style_defaults)
 
