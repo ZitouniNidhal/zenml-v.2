@@ -273,9 +273,12 @@ class ZenMLConsoleFormatter(logging.Formatter):
         self._custom_log_format = custom_log_format
 
         # disable colors if the env var is set to true
-        self._colors_disabled = handle_bool_env_var(
-            ENV_ZENML_LOGGING_COLORS_DISABLED, False
+        self._colors_disabled = (
+            handle_bool_env_var(ENV_ZENML_LOGGING_COLORS_DISABLED, False)
+            or handle_bool_env_var("ZENML_LOGGING_NO_COLOR", False)
+            or handle_bool_env_var("NO_COLOR", False)
         )
+
 
         # using this var, we determine if the log record should be formatted
         # for ZenML server or client.
