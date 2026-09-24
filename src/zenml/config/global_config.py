@@ -148,7 +148,15 @@ class GlobalConfiguration(BaseModel, metaclass=GlobalConfigMetaClass):
         super().__init__(**config_values)
 
         if not fileio.exists(self._config_file):
-            self._write_config()
+            try:
+                self._write_config()
+            except (PermissionError, OSError) as e:
+                logger.warning(
+                    "Could not write initial GlobalConfiguration file at '%s': %s",
+                    self._config_file,
+                    e,
+                )
+
 
     @classmethod
     def get_instance(cls) -> Optional["GlobalConfiguration"]:
