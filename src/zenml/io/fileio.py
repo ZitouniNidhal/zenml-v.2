@@ -55,16 +55,17 @@ def convert_to_str(path: "PathType") -> str:
 
 
 def open(path: "PathType", mode: str = "r") -> Any:  # noqa
-    """Opens a file.
+    """Opens a file using the registered filesystem handler for the given path.
 
     Args:
         path: The path to the file.
-        mode: The mode to open the file in.
+        mode: The mode to open the file in (e.g., 'r', 'w', 'rb', 'wb').
 
     Returns:
-        The opened file.
+        Any: The opened file-like object stream.
     """
     return _get_filesystem(path).open(path, mode=mode)
+
 
 
 def copy(src: "PathType", dst: "PathType", overwrite: bool = False) -> None:
