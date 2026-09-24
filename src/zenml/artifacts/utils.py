@@ -95,16 +95,17 @@ logger = get_logger(__name__)
 def _save_artifact_visualizations(
     data: Any, materializer: "BaseMaterializer"
 ) -> List[ArtifactVisualizationRequest]:
-    """Save artifact visualizations.
+    """Save artifact visualizations using the specified materializer instance.
 
     Args:
-        data: The data for which to save the visualizations.
-        materializer: The materializer that should be used to generate and
-            save the visualizations.
+        data: The artifact data for which to generate and save visualizations.
+        materializer: The materializer instance responsible for generating
+            visualizations.
 
     Returns:
-        List of requests for the saved visualizations.
+        List[ArtifactVisualizationRequest]: List of requests for the saved visualizations.
     """
+
     try:
         visualizations = materializer.save_visualizations(data)
     except Exception as e:
