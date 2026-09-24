@@ -1,9 +1,14 @@
-# Reporting a Vulnerability
+## Supported Versions
 
-If you believe you have found a security vulnerability in ZenML, please report
-it privately, even if you are not certain that it is exploitable.
+Only the latest major and minor release lines receive active security updates.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 0.70.x+ | :white_check_mark: |
+| < 0.70  :x:                |
 
 ## Primary reporting channel
+
 
 Submit the vulnerability through
 [GitHub Private Vulnerability Reporting](https://github.com/zenml-io/zenml/security/advisories).
