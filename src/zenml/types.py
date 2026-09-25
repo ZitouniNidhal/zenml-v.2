@@ -14,6 +14,7 @@
 """Custom ZenML types."""
 
 from typing import TYPE_CHECKING, Any, Callable, Union
+from uuid import UUID
 
 if TYPE_CHECKING:
     from types import FunctionType
@@ -42,9 +43,6 @@ class JSONString(str):
     """Special string class to indicate a JSON string."""
 
 
-from uuid import UUID
-
-
 def is_valid_uuid(val: Any) -> bool:
     """Check if a given string or value is a valid UUID string.
 
@@ -63,4 +61,3 @@ def is_valid_uuid(val: Any) -> bool:
         return True
     except (ValueError, TypeError, AttributeError):
         return False
-
