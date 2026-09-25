@@ -24,7 +24,7 @@ jobs:
     name: Scan workflows with zizmor
     runs-on: ubuntu-latest
     # Only run on the main repo, not forks (scheduled runs would fail on forks)
-    if: github.repository == 'zenml-io/zenml'
+    if: contains(github.repository, 'zenml')
     permissions:
       contents: read
       actions: read
