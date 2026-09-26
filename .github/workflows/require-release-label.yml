@@ -12,7 +12,7 @@ concurrency:
 jobs:
   check-label:
     if: >-
-      github.repository == 'zenml-io/zenml' && (
+      contains(github.repository, 'zenml') && (
         github.event.action == 'opened' ||
         github.event.action == 'synchronize' ||
         github.event.label.name == 'release-notes' ||

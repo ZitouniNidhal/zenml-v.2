@@ -118,6 +118,9 @@ EXEMPT_DOMAIN_STATUS: Dict[str, set] = {
     "developer.hashicorp.com": {429},
     "terraform.io": {429},
     "www.terraform.io": {429},
+    # BentoML documentation hosts rate-limit CI traffic with 429.
+    "docs.bentoml.org": {429},
+    "docs.bentoml.com": {429},
     # AWS documentation and SDK reference hosts often reject CI traffic.
     "boto3.amazonaws.com": {403},
     "botocore.amazonaws.com": {403},
@@ -135,6 +138,8 @@ EXEMPT_DOMAIN_STATUS: Dict[str, set] = {
 # These defaults can be extended via CLI flags.
 DEFAULT_IGNORE_429_DOMAINS = {
     "developer.hashicorp.com",
+    "docs.bentoml.org",
+    "docs.bentoml.com",
     "huggingface.co",
     "terraform.io",
     "www.terraform.io",
