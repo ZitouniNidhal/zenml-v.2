@@ -32,17 +32,19 @@ env:
 jobs:
   run-slow-ci-label-is-set:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft ==
+      false
     steps:
-      # using this instead of contains(github.event.pull_request.labels.*.name, 'run-slow-ci')
-      # to make it dynamic, otherwise github context is fixed at the moment of trigger event.
-      # With dynamic approach dev can set label and rerun this flow to make it running.
       - name: Get PR labels
         id: pr-labels
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
         with:
           script: |
-            const prNumber = ${{ github.event.pull_request.number }};
+            if (context.eventName !== 'pull_request') {
+              core.setOutput('all-labels', 'run-slow-ci');
+              return;
+            }
+            const prNumber = context.issue.number;
             const { data: labels } = await github.rest.issues.listLabelsOnIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
