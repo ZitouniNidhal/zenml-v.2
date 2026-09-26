@@ -13,6 +13,7 @@ env:
   ZENML_ANALYTICS_OPT_IN: false
 jobs:
   test-agent-examples:
+    if: github.repository == 'zenml-io/zenml'
     runs-on: ubuntu-latest
     env:
       # Ensure examples run with OpenAI credentials and consistent env behaviour
