@@ -71,7 +71,7 @@ ZenML is used by thousands of companies to run their AI workflows. Here are some
 <div align="center">
   <a href="https://www.leroymerlin.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/65ddeac9b83eea2954b5a561_leroy_merlin_logo-min.svg" alt="Leroy Merlin" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.koble.ai/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/67e673e60161f59b5db6554c_koble.svg" alt="Koble" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.playtika.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66e959c0c5f8422ecac8d81a_Playtika-min.svg" alt="Playtika" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.playtika.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66e959c0c5f842ecac8d81a_Playtika-min.svg" alt="Playtika" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://nielseniq.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/65ddeac959d7ca93745e8130_nielsen_iq_logo-min.svg" alt="NIQ" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.enel.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66c84308b1e802ab9a246134_enel-min.svg" alt="Enel" height="50"/></a>
 </div>
@@ -192,7 +192,7 @@ pip install kitaru
 
 ## ❓ FAQs from ML Engineers Like You
 
-**Q: "Do I need to rewrite your agents or models to use ZenML?"**
+**Q: "Do I need to rewrite my agents or models to use ZenML?"**
 
 A: No. Wrap your existing code in a `@step`. Keep using `scikit-learn`, PyTorch, LangGraph, LlamaIndex, or raw API calls. ZenML orchestrates your tools, it doesn't replace them.
 
