@@ -48,7 +48,7 @@
 
 ZenML is built for ML or AI Engineers working on traditional ML use-cases, LLM workflows, or agents, in a company setting.
 
-At it's core, ZenML allows you to write **workflows (pipelines)** that run on any **infrastructure backend (stacks)**. You can embed any Pythonic logic within these pipelines, like training a model, or running an agentic loop. ZenML then operationalizes your application by:
+At its core, ZenML allows you to write **workflows (pipelines)** that run on any **infrastructure backend (stacks)**. You can embed any Pythonic logic within these pipelines, like training a model, or running an agentic loop. ZenML then operationalizes your application by:
 
 1. Automatically containerizing and tracking your code.
 2. Tracking individual runs with metrics, logs, and metadata.
@@ -71,7 +71,7 @@ ZenML is used by thousands of companies to run their AI workflows. Here are some
 <div align="center">
   <a href="https://www.leroymerlin.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/65ddeac9b83eea2954b5a561_leroy_merlin_logo-min.svg" alt="Leroy Merlin" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.koble.ai/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/67e673e60161f59b5db6554c_koble.svg" alt="Koble" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.playtika.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66e959c0c5f8422ecac8d81a_Playtika-min.svg" alt="Playtika" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.playtika.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66e959c0c5f842ecac8d81a_Playtika-min.svg" alt="Playtika" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://nielseniq.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/65ddeac959d7ca93745e8130_nielsen_iq_logo-min.svg" alt="NIQ" height="50"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.enel.com/"><img src="https://cdn.prod.website-files.com/64a817a2e7e2208272d1ce30/66c84308b1e802ab9a246134_enel-min.svg" alt="Enel" height="50"/></a>
 </div>
@@ -198,7 +198,7 @@ A: No. Wrap your existing code in a `@step`. Keep using `scikit-learn`, PyTorch,
 
 **Q: "How is this different from LangSmith/Langfuse?"**
 
-A: They provide excellent observability for LLM applications. We orchestrate the **full MLOps lifecycle for your entire AI stack**. With ZenML, you manage both your classical ML models and your AI agents in one unified framework, from development and evaluation all the way to production deployment.
+A: They provide excellent observability for LLM applications. We orchestrate the **full MLOps lifecycle for your entire AI stack**. With ZenML, you manage both your classical ML models and your AI agents in one unified framework, from development and evaluation all the way to production deployment and monitoring.
 
 **Q: "Can I use my existing MLflow/W&B setup?"**
 
