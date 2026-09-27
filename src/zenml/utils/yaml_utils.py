@@ -36,8 +36,8 @@ def write_yaml(
         file_path: Path to YAML file.
         contents: Contents of YAML file as dict or list.
         sort_keys: If `True`, keys are sorted alphabetically. If `False`,
-            the order in which the keys were inserted into the dict will
-            be preserved.
+            the order in which the keys were inserted into the dict will be
+            preserved.
 
     Raises:
         FileNotFoundError: if directory does not exist.
@@ -84,9 +84,7 @@ def read_yaml(file_path: str) -> Any:
     """
     if fileio.exists(file_path):
         contents = io_utils.read_file_contents_as_string(file_path)
-        # TODO: [LOW] consider adding a default empty dict to be returned
-        #   instead of None
-        return yaml.safe_load(contents)
+        return yaml.safe_load(contents) or {}
     else:
         raise FileNotFoundError(f"{file_path} does not exist.")
 
@@ -174,7 +172,7 @@ def validate_json_schema_value(
 
     Args:
         value: Value to validate.
-        schema: JSON Schema used for validation.
+        schema: JSON Schema used to validate the value.
         fail_if_library_missing: If `True`, raise an error when the optional
             `jsonschema` dependency is not installed.
 
@@ -226,7 +224,7 @@ def is_json_serializable(obj: Any) -> bool:
     """Checks whether an object is JSON serializable.
 
     Args:
-        obj: The object to check.
+        obj: Object to check.
 
     Returns:
         Whether the object is JSON serializable using pydantics encoder class.
