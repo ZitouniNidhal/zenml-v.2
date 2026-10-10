@@ -82,7 +82,7 @@ def verify() -> None:
     help="If True, only print failing urls.",
     is_flag=True,
     type=click.BOOL,
-    default=True,
+    default=False,
 )
 def docs(root_domain: str, ignore_passing: bool) -> None:
     fr = FlavorRegistry()
